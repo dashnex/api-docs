@@ -1,0 +1,6085 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2025-03-21T18:17:19Z",
+    "title" : "Clone from Communities backup"
+  },
+  "host" : "api.dashnex.com",
+  "basePath" : "/communities/v1",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/communities/v1/private" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "categories",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "field",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetCommunitiesResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesCreateCommunityRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesCreateCommunityRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesCreateCommunityResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/accept-tos" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesAcceptTOSRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesAcceptTOSRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesAcceptTOSResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/categories" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "ignoreEmpty",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetCategoriesResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/members/{member}/approve" : {
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesApproveMembershipRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesApproveMembershipRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesApproveMembershipResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      }
+    },
+    "/communities/v1/private/members/{member}/block" : {
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesBlockMemberRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesBlockMemberRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesBlockMemberResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      }
+    },
+    "/communities/v1/private/members/{member}/cancel-request" : {
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesCancelMembershipRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesCancelMembershipRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesCancelMembershipResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/members/{member}/reject" : {
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesRejectMembershipRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesRejectMembershipRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesRejectMembershipResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      }
+    },
+    "/communities/v1/private/members/{member}/unblock" : {
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesUnblockMemberRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesUnblockMemberRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesUnblockMemberResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      }
+    },
+    "/communities/v1/private/milestones" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetMilestonesResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/milestones/user/{user}" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "user",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetUserMilestoneResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "user",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/my-communities" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetMyCommunitiesResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/posts/flags/{flag}" : {
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "flag",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesDeleteFlagRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesDeleteFlagRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesDeleteFlagResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "flag",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/posts/{post}" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetPostResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesDeletePostRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesDeletePostRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesDeletePostResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesEditPostRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesEditPostRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesEditPostResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      }
+    },
+    "/communities/v1/private/posts/{post}/flag" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesFlagPostRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesFlagPostRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesFlagPostResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/posts/{post}/like" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesLikePostRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesLikePostRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesLikePostResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesUnlikePostRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesUnlikePostRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesUnlikePostResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/posts/{post}/likes" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetPostLikesResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/posts/{post}/pin/{pinned}" : {
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pinned",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pinned",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesTogglePostPinRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesTogglePostPinRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesTogglePostPinResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      }
+    },
+    "/communities/v1/private/posts/{post}/reply" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesCreateReplyRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesCreateReplyRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesCreateReplyResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/product-actions" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesProductActionsResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/{path}" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetCommunityResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesDeleteCommunityRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesDeleteCommunityRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesDeleteCommunityResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesUpdateCommunityRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesUpdateCommunityRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesUpdateCommunityResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      }
+    },
+    "/communities/v1/private/{path}/community-cover-image" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesPostCommunityCoverImageRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesPostCommunityCoverImageRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesPostCommunityCoverImageResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/{path}/images" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesUploadImageRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesUploadImageRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesUploadImageResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/{path}/join" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesJoinCommunityRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesJoinCommunityRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesJoinCommunityResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/{path}/members" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetMembersResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/{path}/members/blocked" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetBlockedMembersResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/{path}/my-stats" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetCommunityStatsResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/{path}/posts" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesGetPostsResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesCreatePostRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesCreatePostRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesCreatePostResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/private/{path}/title-cover-image" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "CommunitiesPostTitleCoverImageRequest",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CommunitiesPostTitleCoverImageRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/CommunitiesPostTitleCoverImageResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/communities/v1/public/__healthcheck" : {
+      "get" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/private/categories" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "ignoreEmpty",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/members/{member}/cancel-request" : {
+      "delete" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/members/{member}/reject" : {
+      "options" : {
+        "parameters" : [ {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      },
+      "patch" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "member",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      }
+    },
+    "/private/milestones" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/my-communities" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/posts/{post}" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      },
+      "patch" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      }
+    },
+    "/private/posts/{post}/flag" : {
+      "post" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/posts/{post}/like" : {
+      "post" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/posts/{post}/reply" : {
+      "post" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "post",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/product-actions" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/{path}" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      },
+      "patch" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      }
+    },
+    "/private/{path}/community-cover-image" : {
+      "post" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/{path}/members" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/{path}/posts" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "direction",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "perPage",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "sortBy",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "post" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/private/{path}/title-cover-image" : {
+      "post" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "live_lambda_authorizer" : [ ]
+        } ]
+      },
+      "options" : {
+        "parameters" : [ {
+          "name" : "path",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    },
+    "/public/__healthcheck" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      },
+      "options" : {
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "live_lambda_authorizer" : {
+      "type" : "apiKey",
+      "name" : "authorization",
+      "in" : "header",
+      "x-amazon-apigateway-authtype" : "custom"
+    }
+  },
+  "definitions" : {
+    "CommunitiesGetMyCommunitiesResponse" : {
+      "type" : "object",
+      "required" : [ "items", "total" ],
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Unique identifier of the club"
+              },
+              "user" : {
+                "type" : "object",
+                "properties" : {
+                  "surname" : {
+                    "type" : "string"
+                  },
+                  "id" : {
+                    "type" : "integer"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "isBusiness" : {
+                    "type" : "boolean"
+                  }
+                },
+                "required" : [ "id", "isBusiness", "name", "surname" ]
+              },
+              "name" : {
+                "type" : "string",
+                "description" : "Name of the club"
+              },
+              "path" : {
+                "type" : "string",
+                "description" : "URL-friendly path of the club"
+              },
+              "description" : {
+                "type" : "string",
+                "description" : "Description of the club"
+              },
+              "type" : {
+                "type" : "string",
+                "description" : "Type of the club",
+                "enum" : [ "private" ]
+              },
+              "category" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  }
+                },
+                "required" : [ "id", "name" ]
+              },
+              "allowLinks" : {
+                "type" : "boolean",
+                "description" : "Whether links are allowed in the club"
+              },
+              "visibility" : {
+                "type" : "boolean",
+                "description" : "Visibility status of the club"
+              },
+              "editDuration" : {
+                "type" : "integer",
+                "description" : "Duration (in minutes) allowed for editing",
+                "minimum" : 0.0
+              },
+              "deleteDuration" : {
+                "type" : "integer",
+                "description" : "Duration (in minutes) allowed for deletion",
+                "minimum" : 0.0
+              },
+              "createdAt" : {
+                "type" : "string",
+                "format" : "date-time",
+                "description" : "Creation timestamp"
+              },
+              "updatedAt" : {
+                "type" : "string",
+                "format" : "date-time",
+                "description" : "Last update timestamp"
+              },
+              "approvedMembersCount" : {
+                "type" : "integer",
+                "description" : "Number of approved members",
+                "minimum" : 0.0
+              },
+              "ownerMilestone" : {
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "credits" : {
+                    "type" : "integer",
+                    "minimum" : 0.0
+                  }
+                },
+                "required" : [ "credits", "description", "name" ]
+              },
+              "isMember" : {
+                "type" : "boolean",
+                "description" : "Whether the current user is a member"
+              }
+            },
+            "required" : [ "allowLinks", "approvedMembersCount", "category", "createdAt", "deleteDuration", "description", "editDuration", "id", "isMember", "name", "ownerMilestone", "path", "type", "updatedAt", "user", "visibility" ]
+          }
+        },
+        "total" : {
+          "type" : "integer",
+          "description" : "Total number of items",
+          "minimum" : 0.0
+        }
+      },
+      "title" : "GetMyCommunitiesResponse"
+    },
+    "CommunitiesBlockMemberResponse" : {
+      "type" : "object",
+      "required" : [ "blockReason", "community", "createdAt", "id", "isBlocked", "status", "updatedAt", "user" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Member ID"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "User ID"
+            },
+            "fullName" : {
+              "type" : "string",
+              "description" : "User's full name"
+            }
+          },
+          "required" : [ "fullName", "id" ]
+        },
+        "community" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Community ID"
+            },
+            "path" : {
+              "type" : "string",
+              "description" : "Community URL path",
+              "pattern" : "^[a-z0-9.-]{2,}$"
+            }
+          },
+          "required" : [ "id", "path" ]
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Member status",
+          "enum" : [ "PENDING", "APPROVED", "INACTIVE", "BANNED", "REJECTED", "CANCELED" ]
+        },
+        "isBlocked" : {
+          "type" : "boolean",
+          "description" : "Whether the member is blocked"
+        },
+        "blockReason" : {
+          "type" : "string",
+          "description" : "Reason for blocking the member",
+          "maxLength" : 150
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was last updated"
+        }
+      },
+      "title" : "BlockMemberResponse"
+    },
+    "CommunitiesCreateCommunityRequest" : {
+      "type" : "object",
+      "required" : [ "category", "name", "path", "type" ],
+      "properties" : {
+        "name" : {
+          "type" : "string",
+          "description" : "Name of the community",
+          "maxLength" : 100
+        },
+        "path" : {
+          "type" : "string",
+          "description" : "URL-friendly path for the community",
+          "minLength" : 2,
+          "maxLength" : 100,
+          "pattern" : "^[a-z0-9=-]{2,}$"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Short description of the community",
+          "maxLength" : 220
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Community type",
+          "enum" : [ "public", "private" ],
+          "default" : "public"
+        },
+        "category" : {
+          "type" : "integer",
+          "description" : "ID of the community category"
+        }
+      },
+      "title" : "CreateCommunityRequest"
+    },
+    "CommunitiesGetMilestonesResponse" : {
+      "title" : "GetMilestonesResponse",
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "The name of the rank"
+          },
+          "description" : {
+            "type" : "string",
+            "description" : "Description of the rank"
+          },
+          "credits" : {
+            "type" : "integer",
+            "description" : "Number of credits required for this rank",
+            "minimum" : 0.0
+          }
+        },
+        "required" : [ "credits", "description", "name" ]
+      }
+    },
+    "CommunitiesPostCommunityCoverImageRequest" : {
+      "type" : "object",
+      "required" : [ "communityCoverImageFile", "path" ],
+      "properties" : {
+        "path" : {
+          "type" : "string",
+          "description" : "Community URL path",
+          "minLength" : 2,
+          "pattern" : "^[a-z0-9.-]{2,}$"
+        },
+        "communityCoverImageFile" : {
+          "type" : "string",
+          "format" : "binary",
+          "description" : "The community cover image file to upload (max 5MB)"
+        }
+      },
+      "title" : "PostCommunityCoverImageRequest"
+    },
+    "CommunitiesCreatePostRequest" : {
+      "type" : "object",
+      "required" : [ "path", "text" ],
+      "properties" : {
+        "path" : {
+          "type" : "string",
+          "description" : "Community URL path",
+          "minLength" : 2,
+          "pattern" : "^[a-z0-9.-]{2,}$"
+        },
+        "text" : {
+          "type" : "string",
+          "description" : "Post content",
+          "maxLength" : 65535
+        },
+        "pinned" : {
+          "type" : "boolean",
+          "description" : "Whether the post should be pinned",
+          "default" : false
+        },
+        "topic" : {
+          "type" : "object",
+          "description" : "Topic this post belongs to",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Topic ID"
+            }
+          },
+          "required" : [ "id" ]
+        },
+        "attachments" : {
+          "type" : "array",
+          "description" : "List of file attachments",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "File ID"
+              }
+            },
+            "required" : [ "id" ]
+          }
+        }
+      },
+      "title" : "CreatePostRequest"
+    },
+    "CommunitiesRejectMembershipResponse" : {
+      "type" : "object",
+      "required" : [ "community", "cooldownStart", "createdAt", "id", "status", "updatedAt", "user" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Member ID"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "User ID"
+            },
+            "fullName" : {
+              "type" : "string",
+              "description" : "User's full name"
+            }
+          },
+          "required" : [ "fullName", "id" ]
+        },
+        "community" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Community ID"
+            },
+            "path" : {
+              "type" : "string",
+              "description" : "Community URL path",
+              "pattern" : "^[a-z0-9.-]{2,}$"
+            }
+          },
+          "required" : [ "id", "path" ]
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Member status",
+          "enum" : [ "REJECTED" ]
+        },
+        "cooldownStart" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the cooldown period started"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was last updated"
+        }
+      },
+      "title" : "RejectMembershipResponse"
+    },
+    "CommunitiesGetMembersResponseItemsItem" : {
+      "$ref" : "#/definitions/CommunitiesGetMembersResponseItemsItem"
+    },
+    "CommunitiesUploadImageRequest" : {
+      "type" : "object",
+      "required" : [ "imageFile", "path" ],
+      "properties" : {
+        "path" : {
+          "type" : "string",
+          "description" : "Community URL path",
+          "minLength" : 2,
+          "pattern" : "^[a-z0-9.-]{2,}$"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Name of the image"
+        },
+        "imageFile" : {
+          "type" : "string",
+          "format" : "binary",
+          "description" : "The image file to upload (max 5MB)"
+        }
+      },
+      "title" : "UploadImageRequest"
+    },
+    "CommunitiesAcceptTOSRequest" : {
+      "type" : "object",
+      "title" : "AcceptTOSRequest"
+    },
+    "CommunitiesCancelMembershipRequest" : {
+      "type" : "object",
+      "required" : [ "member" ],
+      "properties" : {
+        "member" : {
+          "type" : "integer",
+          "description" : "Member ID"
+        }
+      },
+      "title" : "CancelMembershipRequest"
+    },
+    "CommunitiesGetBlockedMembersResponse" : {
+      "type" : "object",
+      "required" : [ "items", "total" ],
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "description" : "List of blocked members",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Member ID"
+              },
+              "user" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "description" : "User ID"
+                  },
+                  "fullName" : {
+                    "type" : "string",
+                    "description" : "User's full name"
+                  }
+                },
+                "required" : [ "fullName", "id" ]
+              },
+              "status" : {
+                "type" : "string",
+                "description" : "Member status",
+                "enum" : [ "PENDING", "APPROVED", "INACTIVE", "BANNED", "REJECTED", "CANCELED" ]
+              },
+              "isBlocked" : {
+                "type" : "boolean",
+                "description" : "Whether the member is blocked"
+              },
+              "blockReason" : {
+                "type" : "string",
+                "description" : "Reason for blocking the member",
+                "maxLength" : 150
+              },
+              "createdAt" : {
+                "type" : "string",
+                "format" : "date-time",
+                "description" : "When the membership was created"
+              },
+              "updatedAt" : {
+                "type" : "string",
+                "format" : "date-time",
+                "description" : "When the membership was last updated"
+              }
+            },
+            "required" : [ "blockReason", "createdAt", "id", "isBlocked", "status", "updatedAt", "user" ]
+          }
+        },
+        "total" : {
+          "type" : "integer",
+          "description" : "Total number of blocked members",
+          "minimum" : 0.0
+        }
+      },
+      "title" : "GetBlockedMembersResponse"
+    },
+    "CommunitiesApproveMembershipResponse" : {
+      "type" : "object",
+      "required" : [ "community", "createdAt", "id", "status", "updatedAt", "user" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Member ID"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "User ID"
+            },
+            "fullName" : {
+              "type" : "string",
+              "description" : "User's full name"
+            }
+          },
+          "required" : [ "fullName", "id" ]
+        },
+        "community" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Community ID"
+            },
+            "path" : {
+              "type" : "string",
+              "description" : "Community URL path",
+              "pattern" : "^[a-z0-9.-]{2,}$"
+            }
+          },
+          "required" : [ "id", "path" ]
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Member status",
+          "enum" : [ "APPROVED" ]
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was last updated"
+        }
+      },
+      "title" : "ApproveMembershipResponse"
+    },
+    "CommunitiesPostCommunityCoverImageResponse" : {
+      "type" : "object",
+      "required" : [ "category", "communityCoverImage", "id", "name", "path", "permissions", "topics", "type", "user" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Community ID"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "User ID"
+            },
+            "fullName" : {
+              "type" : "string",
+              "description" : "User's full name"
+            }
+          },
+          "required" : [ "fullName", "id" ]
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Community name",
+          "maxLength" : 100
+        },
+        "path" : {
+          "type" : "string",
+          "description" : "Community URL path",
+          "minLength" : 2,
+          "maxLength" : 100,
+          "pattern" : "^[a-z0-9.-]{2,}$"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Community type",
+          "enum" : [ "public", "private" ]
+        },
+        "category" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Category ID"
+            },
+            "name" : {
+              "type" : "string",
+              "description" : "Category name"
+            }
+          },
+          "required" : [ "id", "name" ]
+        },
+        "communityCoverImage" : {
+          "type" : "string",
+          "description" : "Community cover image URL"
+        },
+        "topics" : {
+          "type" : "array",
+          "description" : "Community topics",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Topic ID"
+              },
+              "name" : {
+                "type" : "string",
+                "description" : "Topic name",
+                "maxLength" : 30
+              },
+              "description" : {
+                "type" : "string",
+                "description" : "Topic description",
+                "maxLength" : 220
+              }
+            },
+            "required" : [ "description", "id", "name" ]
+          }
+        },
+        "permissions" : {
+          "type" : "array",
+          "description" : "User's permissions for this community",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "title" : "PostCommunityCoverImageResponse"
+    },
+    "CommunitiesGetPostLikesResponse" : {
+      "type" : "object",
+      "required" : [ "items", "total" ],
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "description" : "List of likes for the post",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Like ID"
+              },
+              "member" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "description" : "Member ID"
+                  },
+                  "user" : {
+                    "type" : "object",
+                    "properties" : {
+                      "id" : {
+                        "type" : "integer",
+                        "description" : "User ID"
+                      },
+                      "fullName" : {
+                        "type" : "string",
+                        "description" : "User's full name"
+                      },
+                      "milestone" : {
+                        "type" : "object",
+                        "properties" : {
+                          "id" : {
+                            "type" : "integer",
+                            "description" : "Milestone ID"
+                          },
+                          "name" : {
+                            "type" : "string",
+                            "description" : "Milestone name"
+                          }
+                        },
+                        "required" : [ "id", "name" ]
+                      }
+                    },
+                    "required" : [ "fullName", "id" ]
+                  }
+                },
+                "required" : [ "id", "user" ]
+              },
+              "createdAt" : {
+                "type" : "string",
+                "format" : "date-time",
+                "description" : "When the like was created"
+              }
+            },
+            "required" : [ "createdAt", "id", "member" ]
+          }
+        },
+        "total" : {
+          "type" : "integer",
+          "description" : "Total number of likes",
+          "minimum" : 0.0
+        }
+      },
+      "title" : "GetPostLikesResponse"
+    },
+    "CommunitiesJoinCommunityResponse" : {
+      "type" : "object",
+      "required" : [ "community", "createdAt", "id", "referralCode", "status", "updatedAt", "user" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Member ID"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "User ID"
+            },
+            "fullName" : {
+              "type" : "string",
+              "description" : "User's full name"
+            }
+          },
+          "required" : [ "fullName", "id" ]
+        },
+        "community" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Community ID"
+            },
+            "path" : {
+              "type" : "string",
+              "description" : "Community URL path",
+              "pattern" : "^[a-z0-9.-]{2,}$"
+            }
+          },
+          "required" : [ "id", "path" ]
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Member status",
+          "enum" : [ "PENDING", "APPROVED" ]
+        },
+        "referralCode" : {
+          "type" : "string",
+          "description" : "Member's referral code",
+          "maxLength" : 12
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was last updated"
+        }
+      },
+      "title" : "JoinCommunityResponse"
+    },
+    "CommunitiesUnlikePostResponse" : {
+      "type" : "object",
+      "required" : [ "success" ],
+      "properties" : {
+        "success" : {
+          "type" : "boolean",
+          "description" : "Whether the unlike operation was successful",
+          "default" : true
+        }
+      },
+      "title" : "UnlikePostResponse"
+    },
+    "CommunitiesDeletePostRequest" : {
+      "type" : "object",
+      "required" : [ "post" ],
+      "properties" : {
+        "post" : {
+          "type" : "integer",
+          "description" : "ID of the post to delete"
+        }
+      },
+      "title" : "DeletePostRequest"
+    },
+    "CommunitiesFlagPostRequest" : {
+      "type" : "object",
+      "required" : [ "post", "reason" ],
+      "properties" : {
+        "post" : {
+          "type" : "integer",
+          "description" : "Post ID"
+        },
+        "reason" : {
+          "type" : "string",
+          "description" : "Reason for flagging the post",
+          "maxLength" : 150
+        }
+      },
+      "title" : "FlagPostRequest"
+    },
+    "CommunitiesGetPostsResponse" : {
+      "type" : "object",
+      "required" : [ "items", "total" ],
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "description" : "List of posts",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Post ID"
+              },
+              "member" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "description" : "Member ID"
+                  },
+                  "user" : {
+                    "type" : "object",
+                    "properties" : {
+                      "id" : {
+                        "type" : "integer",
+                        "description" : "User ID"
+                      },
+                      "fullName" : {
+                        "type" : "string",
+                        "description" : "User's full name"
+                      }
+                    },
+                    "required" : [ "fullName", "id" ]
+                  }
+                },
+                "required" : [ "id", "user" ]
+              },
+              "text" : {
+                "type" : "string",
+                "description" : "Post content",
+                "maxLength" : 65535
+              },
+              "pinned" : {
+                "type" : "boolean",
+                "description" : "Whether the post is pinned"
+              },
+              "topic" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "description" : "Topic ID"
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "description" : "Topic name",
+                    "maxLength" : 30
+                  },
+                  "description" : {
+                    "type" : "string",
+                    "description" : "Topic description",
+                    "maxLength" : 220
+                  }
+                },
+                "required" : [ "description", "id", "name" ]
+              },
+              "attachments" : {
+                "type" : "array",
+                "description" : "List of file attachments",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "integer",
+                      "description" : "File ID"
+                    }
+                  },
+                  "required" : [ "id" ]
+                }
+              },
+              "createdAt" : {
+                "type" : "string",
+                "format" : "date-time",
+                "description" : "When the post was created"
+              },
+              "updatedAt" : {
+                "type" : "string",
+                "format" : "date-time",
+                "description" : "When the post was last updated"
+              }
+            },
+            "required" : [ "createdAt", "id", "member", "pinned", "text", "updatedAt" ]
+          }
+        },
+        "total" : {
+          "type" : "integer",
+          "description" : "Total number of posts",
+          "minimum" : 0.0
+        }
+      },
+      "title" : "GetPostsResponse"
+    },
+    "CommunitiesGetPostResponse" : {
+      "type" : "object",
+      "required" : [ "comments", "createdAt", "id", "member", "pinned", "text", "updatedAt" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Post ID"
+        },
+        "member" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Member ID"
+            },
+            "user" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "description" : "User ID"
+                },
+                "fullName" : {
+                  "type" : "string",
+                  "description" : "User's full name"
+                },
+                "milestone" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "integer",
+                      "description" : "Milestone ID"
+                    },
+                    "name" : {
+                      "type" : "string",
+                      "description" : "Milestone name"
+                    }
+                  },
+                  "required" : [ "id", "name" ]
+                }
+              },
+              "required" : [ "fullName", "id" ]
+            }
+          },
+          "required" : [ "id", "user" ]
+        },
+        "text" : {
+          "type" : "string",
+          "description" : "Content of the post",
+          "maxLength" : 65535
+        },
+        "pinned" : {
+          "type" : "boolean",
+          "description" : "Whether the post is pinned"
+        },
+        "topic" : {
+          "type" : "object",
+          "description" : "Associated topic",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Topic ID"
+            },
+            "name" : {
+              "type" : "string",
+              "description" : "Topic name"
+            }
+          },
+          "required" : [ "id", "name" ]
+        },
+        "attachments" : {
+          "type" : "array",
+          "description" : "File attachments for the post",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "File ID"
+              }
+            },
+            "required" : [ "id" ]
+          }
+        },
+        "flags" : {
+          "type" : "array",
+          "description" : "Flags on the post",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Flag ID"
+              },
+              "reason" : {
+                "type" : "string",
+                "description" : "Reason for flagging"
+              }
+            },
+            "required" : [ "id", "reason" ]
+          }
+        },
+        "comments" : {
+          "type" : "object",
+          "properties" : {
+            "items" : {
+              "type" : "array",
+              "description" : "List of comments on the post",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "description" : "Comment ID"
+                  },
+                  "member" : {
+                    "type" : "object",
+                    "properties" : {
+                      "id" : {
+                        "type" : "integer",
+                        "description" : "Member ID"
+                      },
+                      "user" : {
+                        "type" : "object",
+                        "properties" : {
+                          "id" : {
+                            "type" : "integer",
+                            "description" : "User ID"
+                          },
+                          "fullName" : {
+                            "type" : "string",
+                            "description" : "User's full name"
+                          },
+                          "milestone" : {
+                            "type" : "object",
+                            "properties" : {
+                              "id" : {
+                                "type" : "integer",
+                                "description" : "Milestone ID"
+                              },
+                              "name" : {
+                                "type" : "string",
+                                "description" : "Milestone name"
+                              }
+                            },
+                            "required" : [ "id", "name" ]
+                          }
+                        },
+                        "required" : [ "fullName", "id" ]
+                      }
+                    },
+                    "required" : [ "id", "user" ]
+                  },
+                  "text" : {
+                    "type" : "string",
+                    "description" : "Content of the comment",
+                    "maxLength" : 65535
+                  },
+                  "attachments" : {
+                    "type" : "array",
+                    "description" : "File attachments for the comment",
+                    "items" : {
+                      "type" : "object",
+                      "properties" : {
+                        "id" : {
+                          "type" : "integer",
+                          "description" : "File ID"
+                        }
+                      },
+                      "required" : [ "id" ]
+                    }
+                  },
+                  "createdAt" : {
+                    "type" : "string",
+                    "format" : "date-time",
+                    "description" : "When the comment was created"
+                  },
+                  "updatedAt" : {
+                    "type" : "string",
+                    "format" : "date-time",
+                    "description" : "When the comment was last updated"
+                  }
+                },
+                "required" : [ "createdAt", "id", "member", "text", "updatedAt" ]
+              }
+            },
+            "total" : {
+              "type" : "integer",
+              "description" : "Total number of comments",
+              "minimum" : 0.0
+            }
+          },
+          "required" : [ "items", "total" ]
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the post was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the post was last updated"
+        }
+      },
+      "title" : "GetPostResponse"
+    },
+    "CommunitiesPostTitleCoverImageResponse" : {
+      "type" : "object",
+      "required" : [ "category", "id", "name", "path", "permissions", "titleCoverImage", "topics", "type", "user" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Community ID"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "User ID"
+            },
+            "fullName" : {
+              "type" : "string",
+              "description" : "User's full name"
+            }
+          },
+          "required" : [ "fullName", "id" ]
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Community name",
+          "maxLength" : 100
+        },
+        "path" : {
+          "type" : "string",
+          "description" : "Community URL path",
+          "minLength" : 2,
+          "maxLength" : 100,
+          "pattern" : "^[a-z0-9.-]{2,}$"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Community type",
+          "enum" : [ "public", "private" ]
+        },
+        "category" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Category ID"
+            },
+            "name" : {
+              "type" : "string",
+              "description" : "Category name"
+            }
+          },
+          "required" : [ "id", "name" ]
+        },
+        "titleCoverImage" : {
+          "type" : "string",
+          "description" : "Title cover image URL"
+        },
+        "topics" : {
+          "type" : "array",
+          "description" : "Community topics",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Topic ID"
+              },
+              "name" : {
+                "type" : "string",
+                "description" : "Topic name",
+                "maxLength" : 30
+              },
+              "description" : {
+                "type" : "string",
+                "description" : "Topic description",
+                "maxLength" : 220
+              }
+            },
+            "required" : [ "description", "id", "name" ]
+          }
+        },
+        "permissions" : {
+          "type" : "array",
+          "description" : "User's permissions for this community",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "title" : "PostTitleCoverImageResponse"
+    },
+    "CommunitiesGetCommunityStatsResponse" : {
+      "type" : "object",
+      "required" : [ "amount", "commentsCount", "likesCount", "postsCount", "referralCode" ],
+      "properties" : {
+        "amount" : {
+          "type" : "integer",
+          "description" : "Total amount (possibly earnings or balance)",
+          "minimum" : 0.0
+        },
+        "likesCount" : {
+          "type" : "integer",
+          "description" : "Total number of likes received",
+          "minimum" : 0.0
+        },
+        "postsCount" : {
+          "type" : "integer",
+          "description" : "Total number of posts created",
+          "minimum" : 0.0
+        },
+        "commentsCount" : {
+          "type" : "integer",
+          "description" : "Total number of comments made",
+          "minimum" : 0.0
+        },
+        "referralCode" : {
+          "type" : "string",
+          "description" : "User's unique referral code",
+          "pattern" : "^[0-9A-F]{12}$"
+        }
+      },
+      "title" : "GetCommunityStatsResponse"
+    },
+    "CommunitiesUnblockMemberRequest" : {
+      "type" : "object",
+      "required" : [ "member" ],
+      "properties" : {
+        "member" : {
+          "type" : "integer",
+          "description" : "Member ID"
+        }
+      },
+      "title" : "UnblockMemberRequest"
+    },
+    "CommunitiesEditPostRequest" : {
+      "type" : "object",
+      "required" : [ "post", "text" ],
+      "properties" : {
+        "post" : {
+          "type" : "integer",
+          "description" : "ID of the post to edit"
+        },
+        "text" : {
+          "type" : "string",
+          "description" : "Updated content of the post",
+          "maxLength" : 65535
+        },
+        "pinned" : {
+          "type" : "boolean",
+          "description" : "Whether the post should be pinned",
+          "default" : false
+        },
+        "topic" : {
+          "type" : "object",
+          "description" : "Updated topic for the post",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Topic ID"
+            }
+          },
+          "required" : [ "id" ]
+        },
+        "attachments" : {
+          "type" : "array",
+          "description" : "Updated file attachments for the post",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "File ID"
+              }
+            },
+            "required" : [ "id" ]
+          }
+        }
+      },
+      "title" : "EditPostRequest"
+    },
+    "CommunitiesRejectMembershipRequest" : {
+      "type" : "object",
+      "required" : [ "member" ],
+      "properties" : {
+        "member" : {
+          "type" : "integer",
+          "description" : "Member ID"
+        }
+      },
+      "title" : "RejectMembershipRequest"
+    },
+    "CommunitiesTogglePostPinRequest" : {
+      "type" : "object",
+      "required" : [ "post" ],
+      "properties" : {
+        "post" : {
+          "type" : "integer",
+          "description" : "ID of the post to toggle pin status"
+        }
+      },
+      "title" : "TogglePostPinRequest"
+    },
+    "CommunitiesGetCategoriesResponse" : {
+      "type" : "object",
+      "required" : [ "items", "total" ],
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "description" : "List of categories",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Category ID"
+              },
+              "name" : {
+                "type" : "string",
+                "description" : "Category name"
+              }
+            },
+            "required" : [ "id", "name" ]
+          }
+        },
+        "total" : {
+          "type" : "integer",
+          "description" : "Total number of categories",
+          "minimum" : 0.0
+        }
+      },
+      "title" : "GetCategoriesResponse"
+    },
+    "CommunitiesCreateReplyResponse" : {
+      "type" : "object",
+      "required" : [ "createdAt", "id", "member", "text", "updatedAt" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Reply ID"
+        },
+        "member" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Member ID"
+            },
+            "user" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "description" : "User ID"
+                },
+                "fullName" : {
+                  "type" : "string",
+                  "description" : "User's full name"
+                },
+                "milestone" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "integer",
+                      "description" : "Milestone ID"
+                    },
+                    "name" : {
+                      "type" : "string",
+                      "description" : "Milestone name"
+                    }
+                  },
+                  "required" : [ "id", "name" ]
+                }
+              },
+              "required" : [ "fullName", "id" ]
+            }
+          },
+          "required" : [ "id", "user" ]
+        },
+        "text" : {
+          "type" : "string",
+          "description" : "Reply content",
+          "maxLength" : 65535
+        },
+        "attachments" : {
+          "type" : "array",
+          "description" : "List of file attachments",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "File ID"
+              }
+            },
+            "required" : [ "id" ]
+          }
+        },
+        "flags" : {
+          "type" : "array",
+          "description" : "List of reply flags",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Flag ID"
+              },
+              "reason" : {
+                "type" : "string",
+                "description" : "Flag reason",
+                "maxLength" : 150
+              }
+            },
+            "required" : [ "id", "reason" ]
+          }
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the reply was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the reply was last updated"
+        }
+      },
+      "title" : "CreateReplyResponse"
+    },
+    "CommunitiesUnlikePostRequest" : {
+      "type" : "object",
+      "required" : [ "post" ],
+      "properties" : {
+        "post" : {
+          "type" : "integer",
+          "description" : "Post ID"
+        }
+      },
+      "title" : "UnlikePostRequest"
+    },
+    "CommunitiesUpdateCommunityRequest" : {
+      "type" : "object",
+      "required" : [ "allowLinks", "deleteDuration", "description", "editDuration", "topics", "type", "visibility" ],
+      "properties" : {
+        "description" : {
+          "type" : "string",
+          "description" : "Description of the club"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Type of the club",
+          "enum" : [ "private" ]
+        },
+        "visibility" : {
+          "type" : "boolean",
+          "description" : "Visibility status of the club"
+        },
+        "allowLinks" : {
+          "type" : "boolean",
+          "description" : "Whether links are allowed in the club"
+        },
+        "editDuration" : {
+          "type" : "integer",
+          "description" : "Duration (in minutes) allowed for editing",
+          "minimum" : 0.0
+        },
+        "deleteDuration" : {
+          "type" : "integer",
+          "description" : "Duration (in minutes) allowed for deletion",
+          "minimum" : 0.0
+        },
+        "topics" : {
+          "type" : "array",
+          "description" : "List of topics in the club",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "name" : {
+                "type" : "string",
+                "description" : "Name of the topic"
+              },
+              "description" : {
+                "type" : "string",
+                "description" : "Description of the topic"
+              }
+            },
+            "required" : [ "description", "name" ]
+          }
+        }
+      },
+      "title" : "UpdateCommunityRequest"
+    },
+    "CommunitiesGetCommunitiesResponse" : {
+      "type" : "object",
+      "required" : [ "items", "total" ],
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "description" : "List of communities",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Community ID"
+              },
+              "user" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "description" : "User ID"
+                  },
+                  "fullName" : {
+                    "type" : "string",
+                    "description" : "User's full name"
+                  }
+                },
+                "required" : [ "fullName", "id" ]
+              },
+              "name" : {
+                "type" : "string",
+                "description" : "Community name",
+                "maxLength" : 100
+              },
+              "path" : {
+                "type" : "string",
+                "description" : "Community URL path",
+                "minLength" : 2,
+                "maxLength" : 100,
+                "pattern" : "^[a-z0-9.-]{2,}$"
+              },
+              "category" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "description" : "Category ID"
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "description" : "Category name"
+                  }
+                },
+                "required" : [ "id", "name" ]
+              }
+            },
+            "required" : [ "category", "id", "name", "path", "user" ]
+          }
+        },
+        "total" : {
+          "type" : "integer",
+          "description" : "Total number of communities",
+          "minimum" : 0.0
+        }
+      },
+      "title" : "GetCommunitiesResponse"
+    },
+    "CommunitiesApproveMembershipRequest" : {
+      "type" : "object",
+      "required" : [ "member" ],
+      "properties" : {
+        "member" : {
+          "type" : "integer",
+          "description" : "Member ID"
+        }
+      },
+      "title" : "ApproveMembershipRequest"
+    },
+    "CommunitiesFlagPostResponse" : {
+      "type" : "object",
+      "required" : [ "createdAt", "id", "member", "post", "reason" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Flag ID"
+        },
+        "member" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Member ID"
+            },
+            "user" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "description" : "User ID"
+                },
+                "fullName" : {
+                  "type" : "string",
+                  "description" : "User's full name"
+                }
+              },
+              "required" : [ "fullName", "id" ]
+            }
+          },
+          "required" : [ "id", "user" ]
+        },
+        "post" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Post ID"
+            }
+          },
+          "required" : [ "id" ]
+        },
+        "reason" : {
+          "type" : "string",
+          "description" : "Reason provided for flagging the post",
+          "maxLength" : 150
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the flag was created"
+        }
+      },
+      "title" : "FlagPostResponse"
+    },
+    "CommunitiesEditPostResponse" : {
+      "type" : "object",
+      "required" : [ "createdAt", "id", "member", "pinned", "text", "updatedAt" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Post ID"
+        },
+        "member" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Member ID"
+            },
+            "user" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "description" : "User ID"
+                },
+                "fullName" : {
+                  "type" : "string",
+                  "description" : "User's full name"
+                },
+                "milestone" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "integer",
+                      "description" : "Milestone ID"
+                    },
+                    "name" : {
+                      "type" : "string",
+                      "description" : "Milestone name"
+                    }
+                  },
+                  "required" : [ "id", "name" ]
+                }
+              },
+              "required" : [ "fullName", "id" ]
+            }
+          },
+          "required" : [ "id", "user" ]
+        },
+        "text" : {
+          "type" : "string",
+          "description" : "Updated content of the post",
+          "maxLength" : 65535
+        },
+        "pinned" : {
+          "type" : "boolean",
+          "description" : "Whether the post is pinned"
+        },
+        "topic" : {
+          "type" : "object",
+          "description" : "Associated topic",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Topic ID"
+            },
+            "name" : {
+              "type" : "string",
+              "description" : "Topic name"
+            }
+          },
+          "required" : [ "id", "name" ]
+        },
+        "attachments" : {
+          "type" : "array",
+          "description" : "File attachments for the post",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "File ID"
+              }
+            },
+            "required" : [ "id" ]
+          }
+        },
+        "flags" : {
+          "type" : "array",
+          "description" : "Flags on the post",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Flag ID"
+              },
+              "reason" : {
+                "type" : "string",
+                "description" : "Reason for flagging"
+              }
+            },
+            "required" : [ "id", "reason" ]
+          }
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the post was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the post was last updated"
+        }
+      },
+      "title" : "EditPostResponse"
+    },
+    "CommunitiesGetMembersResponse" : {
+      "type" : "object",
+      "required" : [ "items", "total" ],
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "description" : "List of members",
+          "items" : {
+            "$ref" : "#/definitions/CommunitiesGetMembersResponseItemsItem"
+          }
+        },
+        "total" : {
+          "type" : "integer",
+          "description" : "Total number of members",
+          "minimum" : 0.0
+        }
+      },
+      "title" : "GetMembersResponse"
+    },
+    "CommunitiesBlockMemberRequest" : {
+      "type" : "object",
+      "required" : [ "blockReason" ],
+      "properties" : {
+        "blockReason" : {
+          "type" : "string",
+          "description" : "Reason for blocking the member",
+          "maxLength" : 150
+        }
+      },
+      "title" : "BlockMemberRequest"
+    },
+    "CommunitiesDeleteCommunityResponse" : {
+      "type" : "object",
+      "title" : "DeleteCommunityResponse"
+    },
+    "Empty" : {
+      "type" : "object",
+      "title" : "Empty Schema"
+    },
+    "CommunitiesJoinCommunityRequest" : {
+      "type" : "object",
+      "required" : [ "path" ],
+      "properties" : {
+        "path" : {
+          "type" : "string",
+          "description" : "Community URL path",
+          "minLength" : 2,
+          "pattern" : "^[a-z0-9.-]{2,}$"
+        }
+      },
+      "title" : "JoinCommunityRequest"
+    },
+    "CommunitiesGetCommunityResponse" : {
+      "type" : "object",
+      "required" : [ "allowLinks", "approvedMembersCount", "category", "createdAt", "deleteDuration", "editDuration", "id", "name", "path", "pendingMembersCount", "permissions", "type", "updatedAt", "user", "visibility" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Community ID"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "User ID"
+            },
+            "fullName" : {
+              "type" : "string",
+              "description" : "User's full name"
+            },
+            "milestone" : {
+              "type" : "object",
+              "description" : "User's milestone info",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "description" : "Milestone ID"
+                },
+                "name" : {
+                  "type" : "string",
+                  "description" : "Milestone name"
+                }
+              },
+              "required" : [ "id", "name" ]
+            }
+          },
+          "required" : [ "fullName", "id" ]
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Community name",
+          "maxLength" : 100
+        },
+        "path" : {
+          "type" : "string",
+          "description" : "Community URL path",
+          "minLength" : 2,
+          "maxLength" : 100,
+          "pattern" : "^[a-z0-9.-]{2,}$"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Community type",
+          "enum" : [ "public", "private" ]
+        },
+        "category" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Category ID"
+            },
+            "name" : {
+              "type" : "string",
+              "description" : "Category name"
+            }
+          },
+          "required" : [ "id", "name" ]
+        },
+        "allowLinks" : {
+          "type" : "boolean",
+          "description" : "Whether links are allowed in posts"
+        },
+        "visibility" : {
+          "type" : "boolean",
+          "description" : "Community visibility setting"
+        },
+        "editDuration" : {
+          "type" : "integer",
+          "description" : "Duration in minutes for editing posts",
+          "minimum" : 0.0,
+          "maximum" : 60.0
+        },
+        "deleteDuration" : {
+          "type" : "integer",
+          "description" : "Duration in minutes for deleting posts",
+          "minimum" : 0.0,
+          "maximum" : 60.0
+        },
+        "topics" : {
+          "type" : "array",
+          "description" : "Community topics",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Topic ID"
+              },
+              "name" : {
+                "type" : "string",
+                "description" : "Topic name",
+                "maxLength" : 30
+              },
+              "description" : {
+                "type" : "string",
+                "description" : "Topic description",
+                "maxLength" : 220
+              }
+            },
+            "required" : [ "description", "id", "name" ]
+          }
+        },
+        "approvedMembersCount" : {
+          "type" : "integer",
+          "description" : "Number of approved members",
+          "minimum" : 0.0
+        },
+        "pendingMembersCount" : {
+          "type" : "integer",
+          "description" : "Number of pending members",
+          "minimum" : 0.0
+        },
+        "currentUserMember" : {
+          "type" : "object",
+          "description" : "Current user's membership info",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Member ID"
+            },
+            "status" : {
+              "type" : "string",
+              "description" : "Member status",
+              "enum" : [ "PENDING", "ACTIVE", "INACTIVE", "BANNED" ]
+            },
+            "referralCode" : {
+              "type" : "string",
+              "description" : "Member's referral code",
+              "maxLength" : 12
+            }
+          },
+          "required" : [ "id", "referralCode", "status" ]
+        },
+        "permissions" : {
+          "type" : "array",
+          "description" : "User's permissions for this community",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the community was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the community was last updated"
+        }
+      },
+      "title" : "GetCommunityResponse"
+    },
+    "CommunitiesGetUserMilestoneResponse" : {
+      "type" : "object",
+      "required" : [ "credits", "currentMilestone", "nextMilestone" ],
+      "properties" : {
+        "credits" : {
+          "type" : "integer",
+          "description" : "Current user's credit balance",
+          "minimum" : 0.0
+        },
+        "currentMilestone" : {
+          "type" : "object",
+          "properties" : {
+            "name" : {
+              "type" : "string",
+              "description" : "Name of the current milestone"
+            },
+            "description" : {
+              "type" : "string",
+              "description" : "Description of the current milestone"
+            },
+            "credits" : {
+              "type" : "integer",
+              "description" : "Credits required for the current milestone",
+              "minimum" : 0.0
+            }
+          },
+          "required" : [ "credits", "description", "name" ]
+        },
+        "nextMilestone" : {
+          "type" : "object",
+          "properties" : {
+            "name" : {
+              "type" : "string",
+              "description" : "Name of the next milestone"
+            },
+            "description" : {
+              "type" : "string",
+              "description" : "Description of the next milestone"
+            },
+            "credits" : {
+              "type" : "integer",
+              "description" : "Credits required for the next milestone",
+              "minimum" : 0.0
+            }
+          },
+          "required" : [ "credits", "description", "name" ]
+        }
+      },
+      "title" : "GetUserMilestoneResponse"
+    },
+    "CommunitiesCreateReplyRequest" : {
+      "type" : "object",
+      "required" : [ "parentPost", "text" ],
+      "properties" : {
+        "parentPost" : {
+          "type" : "integer",
+          "description" : "Parent post ID"
+        },
+        "text" : {
+          "type" : "string",
+          "description" : "Reply content",
+          "maxLength" : 65535
+        },
+        "attachments" : {
+          "type" : "array",
+          "description" : "List of file attachments",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "File ID"
+              }
+            },
+            "required" : [ "id" ]
+          }
+        }
+      },
+      "title" : "CreateReplyRequest"
+    },
+    "CommunitiesAcceptTOSResponse" : {
+      "type" : "object",
+      "required" : [ "id", "isBusiness", "name", "surname" ],
+      "properties" : {
+        "surname" : {
+          "type" : "string",
+          "description" : "User's surname"
+        },
+        "id" : {
+          "type" : "integer",
+          "description" : "User's unique identifier"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "User's first name"
+        },
+        "isBusiness" : {
+          "type" : "boolean",
+          "description" : "Flag indicating if the user is a business user"
+        }
+      },
+      "title" : "AcceptTOSResponse"
+    },
+    "CommunitiesUploadImageResponse" : {
+      "type" : "object",
+      "required" : [ "community", "createdAt", "id", "updatedAt" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Image ID"
+        },
+        "community" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Community ID"
+            }
+          },
+          "required" : [ "id" ]
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the image was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the image was last updated"
+        }
+      },
+      "title" : "UploadImageResponse"
+    },
+    "CommunitiesCreateCommunityResponse" : {
+      "type" : "object",
+      "required" : [ "category", "createdAt", "id", "name", "path", "permissions", "topics", "type", "updatedAt", "user" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Community ID"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "User ID"
+            },
+            "fullName" : {
+              "type" : "string",
+              "description" : "User's full name"
+            }
+          },
+          "required" : [ "fullName", "id" ]
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Community name",
+          "maxLength" : 100
+        },
+        "path" : {
+          "type" : "string",
+          "description" : "Community URL path",
+          "minLength" : 2,
+          "maxLength" : 100,
+          "pattern" : "^[a-z0-9.-]{2,}$"
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Community type",
+          "enum" : [ "public", "private" ]
+        },
+        "category" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Category ID"
+            },
+            "name" : {
+              "type" : "string",
+              "description" : "Category name"
+            }
+          },
+          "required" : [ "id", "name" ]
+        },
+        "topics" : {
+          "type" : "array",
+          "description" : "Community topics",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Topic ID"
+              },
+              "name" : {
+                "type" : "string",
+                "description" : "Topic name",
+                "maxLength" : 30
+              },
+              "description" : {
+                "type" : "string",
+                "description" : "Topic description",
+                "maxLength" : 220
+              }
+            },
+            "required" : [ "description", "id", "name" ]
+          }
+        },
+        "permissions" : {
+          "type" : "array",
+          "description" : "User's permissions for this community",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the community was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the community was last updated"
+        }
+      },
+      "title" : "CreateCommunityResponse"
+    },
+    "CommunitiesDeleteCommunityRequest" : {
+      "type" : "object",
+      "required" : [ "path" ],
+      "properties" : {
+        "path" : {
+          "type" : "string",
+          "description" : "Community URL path",
+          "minLength" : 2,
+          "pattern" : "^[a-z0-9.-]{2,}$"
+        }
+      },
+      "title" : "DeleteCommunityRequest"
+    },
+    "CommunitiesDeletePostResponse" : {
+      "type" : "object",
+      "required" : [ "success" ],
+      "properties" : {
+        "success" : {
+          "type" : "boolean",
+          "description" : "Whether the post was successfully deleted",
+          "default" : true
+        }
+      },
+      "title" : "DeletePostResponse"
+    },
+    "CommunitiesTogglePostPinResponse" : {
+      "type" : "object",
+      "required" : [ "id", "pinned", "updatedAt" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Post ID"
+        },
+        "pinned" : {
+          "type" : "boolean",
+          "description" : "New pin status of the post"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the post was last updated"
+        }
+      },
+      "title" : "TogglePostPinResponse"
+    },
+    "CommunitiesLikePostRequest" : {
+      "type" : "object",
+      "required" : [ "post" ],
+      "properties" : {
+        "post" : {
+          "type" : "integer",
+          "description" : "Post ID"
+        }
+      },
+      "title" : "LikePostRequest"
+    },
+    "CommunitiesProductActionsResponse" : {
+      "type" : "object",
+      "required" : [ "code", "creditAmount", "description", "id", "name" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Product action ID"
+        },
+        "code" : {
+          "type" : "string",
+          "description" : "Product action code"
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Product action name"
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Product action description"
+        },
+        "creditAmount" : {
+          "type" : "number",
+          "description" : "Credit amount for this action"
+        }
+      },
+      "title" : "ProductActionsResponse"
+    },
+    "CommunitiesUpdateCommunityResponse" : {
+      "type" : "object",
+      "required" : [ "allowLinks", "approvedMembersCount", "category", "createdAt", "deleteDuration", "description", "editDuration", "id", "member", "name", "ownerMilestone", "path", "pendingMembersCount", "permissions", "topics", "type", "updatedAt", "user", "visibility" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Unique identifier of the club"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "surname" : {
+              "type" : "string"
+            },
+            "id" : {
+              "type" : "integer"
+            },
+            "name" : {
+              "type" : "string"
+            },
+            "fullName" : {
+              "type" : "string"
+            },
+            "defaultBioSite" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer"
+                },
+                "link" : {
+                  "type" : "string"
+                },
+                "verified" : {
+                  "type" : "boolean"
+                },
+                "tagline" : {
+                  "type" : "string"
+                },
+                "published" : {
+                  "type" : "boolean"
+                },
+                "communityWidgetsInRecommendations" : {
+                  "type" : "boolean"
+                }
+              },
+              "required" : [ "communityWidgetsInRecommendations", "id", "link", "published", "tagline", "verified" ]
+            },
+            "photoFile" : {
+              "type" : "string",
+              "format" : "uri"
+            },
+            "isBusiness" : {
+              "type" : "boolean"
+            }
+          },
+          "required" : [ "defaultBioSite", "fullName", "id", "isBusiness", "name", "photoFile", "surname" ]
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "path" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string",
+          "enum" : [ "private" ]
+        },
+        "category" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer"
+            },
+            "name" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "id", "name" ]
+        },
+        "allowLinks" : {
+          "type" : "boolean"
+        },
+        "visibility" : {
+          "type" : "boolean"
+        },
+        "editDuration" : {
+          "type" : "integer",
+          "minimum" : 0.0
+        },
+        "deleteDuration" : {
+          "type" : "integer",
+          "minimum" : 0.0
+        },
+        "topics" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer"
+              },
+              "name" : {
+                "type" : "string"
+              },
+              "description" : {
+                "type" : "string"
+              }
+            },
+            "required" : [ "description", "id", "name" ]
+          }
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "permissions" : {
+          "type" : "object",
+          "properties" : {
+            "isOwner" : {
+              "type" : "boolean"
+            },
+            "isMember" : {
+              "type" : "boolean"
+            },
+            "canEdit" : {
+              "type" : "boolean"
+            },
+            "canPost" : {
+              "type" : "boolean"
+            },
+            "canJoin" : {
+              "type" : "boolean"
+            }
+          },
+          "required" : [ "canEdit", "canJoin", "canPost", "isMember", "isOwner" ]
+        },
+        "approvedMembersCount" : {
+          "type" : "integer",
+          "minimum" : 0.0
+        },
+        "pendingMembersCount" : {
+          "type" : "integer",
+          "minimum" : 0.0
+        },
+        "member" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer"
+            },
+            "status" : {
+              "type" : "string",
+              "enum" : [ "approved" ]
+            },
+            "isBlocked" : {
+              "type" : "boolean"
+            }
+          },
+          "required" : [ "id", "isBlocked", "status" ]
+        },
+        "ownerMilestone" : {
+          "type" : "object",
+          "properties" : {
+            "name" : {
+              "type" : "string"
+            },
+            "description" : {
+              "type" : "string"
+            },
+            "credits" : {
+              "type" : "integer",
+              "minimum" : 0.0
+            }
+          },
+          "required" : [ "credits", "description", "name" ]
+        }
+      },
+      "title" : "UpdateCommunityResponse"
+    },
+    "CommunitiesDeleteFlagResponse" : {
+      "type" : "object",
+      "required" : [ "success" ],
+      "properties" : {
+        "success" : {
+          "type" : "boolean",
+          "description" : "Whether the flag was successfully deleted",
+          "default" : true
+        }
+      },
+      "title" : "DeleteFlagResponse"
+    },
+    "CommunitiesPostTitleCoverImageRequest" : {
+      "type" : "object",
+      "required" : [ "path", "titleCoverImageFile" ],
+      "properties" : {
+        "path" : {
+          "type" : "string",
+          "description" : "Community URL path",
+          "minLength" : 2,
+          "pattern" : "^[a-z0-9.-]{2,}$"
+        },
+        "titleCoverImageFile" : {
+          "type" : "string",
+          "format" : "binary",
+          "description" : "The title cover image file to upload (max 5MB)"
+        }
+      },
+      "title" : "PostTitleCoverImageRequest"
+    },
+    "CommunitiesLikePostResponse" : {
+      "type" : "object",
+      "required" : [ "createdAt", "id", "member", "post" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Like ID"
+        },
+        "member" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Member ID"
+            },
+            "user" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "description" : "User ID"
+                },
+                "fullName" : {
+                  "type" : "string",
+                  "description" : "User's full name"
+                }
+              },
+              "required" : [ "fullName", "id" ]
+            }
+          },
+          "required" : [ "id", "user" ]
+        },
+        "post" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Post ID"
+            },
+            "member" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "description" : "Member ID"
+                },
+                "user" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "integer",
+                      "description" : "User ID"
+                    },
+                    "fullName" : {
+                      "type" : "string",
+                      "description" : "User's full name"
+                    }
+                  },
+                  "required" : [ "fullName", "id" ]
+                }
+              },
+              "required" : [ "id", "user" ]
+            }
+          },
+          "required" : [ "id", "member" ]
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the like was created"
+        }
+      },
+      "title" : "LikePostResponse"
+    },
+    "CommunitiesUnblockMemberResponse" : {
+      "type" : "object",
+      "required" : [ "community", "createdAt", "id", "isBlocked", "status", "updatedAt", "user" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Member ID"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "User ID"
+            },
+            "fullName" : {
+              "type" : "string",
+              "description" : "User's full name"
+            }
+          },
+          "required" : [ "fullName", "id" ]
+        },
+        "community" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Community ID"
+            },
+            "path" : {
+              "type" : "string",
+              "description" : "Community URL path",
+              "pattern" : "^[a-z0-9.-]{2,}$"
+            }
+          },
+          "required" : [ "id", "path" ]
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Member status",
+          "enum" : [ "PENDING", "APPROVED", "INACTIVE", "BANNED", "REJECTED", "CANCELED" ]
+        },
+        "isBlocked" : {
+          "type" : "boolean",
+          "description" : "Whether the member is blocked"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was last updated"
+        }
+      },
+      "title" : "UnblockMemberResponse"
+    },
+    "CommunitiesCancelMembershipResponse" : {
+      "type" : "object",
+      "required" : [ "community", "cooldownStart", "createdAt", "id", "status", "updatedAt", "user" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Member ID"
+        },
+        "user" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "User ID"
+            },
+            "fullName" : {
+              "type" : "string",
+              "description" : "User's full name"
+            }
+          },
+          "required" : [ "fullName", "id" ]
+        },
+        "community" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Community ID"
+            },
+            "path" : {
+              "type" : "string",
+              "description" : "Community URL path",
+              "pattern" : "^[a-z0-9.-]{2,}$"
+            }
+          },
+          "required" : [ "id", "path" ]
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "Member status",
+          "enum" : [ "CANCELED" ]
+        },
+        "cooldownStart" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the cooldown period started"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the membership was last updated"
+        }
+      },
+      "title" : "CancelMembershipResponse"
+    },
+    "CommunitiesDeleteFlagRequest" : {
+      "type" : "object",
+      "required" : [ "post" ],
+      "properties" : {
+        "post" : {
+          "type" : "integer",
+          "description" : "Post ID"
+        }
+      },
+      "title" : "DeleteFlagRequest"
+    },
+    "CommunitiesCreatePostResponse" : {
+      "type" : "object",
+      "required" : [ "createdAt", "id", "member", "pinned", "text", "updatedAt" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "description" : "Post ID"
+        },
+        "member" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Member ID"
+            },
+            "user" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "description" : "User ID"
+                },
+                "fullName" : {
+                  "type" : "string",
+                  "description" : "User's full name"
+                },
+                "milestone" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "integer",
+                      "description" : "Milestone ID"
+                    },
+                    "name" : {
+                      "type" : "string",
+                      "description" : "Milestone name"
+                    }
+                  },
+                  "required" : [ "id", "name" ]
+                }
+              },
+              "required" : [ "fullName", "id" ]
+            }
+          },
+          "required" : [ "id", "user" ]
+        },
+        "text" : {
+          "type" : "string",
+          "description" : "Post content",
+          "maxLength" : 65535
+        },
+        "pinned" : {
+          "type" : "boolean",
+          "description" : "Whether the post is pinned"
+        },
+        "topic" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Topic ID"
+            },
+            "name" : {
+              "type" : "string",
+              "description" : "Topic name",
+              "maxLength" : 30
+            },
+            "description" : {
+              "type" : "string",
+              "description" : "Topic description",
+              "maxLength" : 220
+            }
+          },
+          "required" : [ "description", "id", "name" ]
+        },
+        "attachments" : {
+          "type" : "array",
+          "description" : "List of file attachments",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "File ID"
+              }
+            },
+            "required" : [ "id" ]
+          }
+        },
+        "flags" : {
+          "type" : "array",
+          "description" : "List of post flags",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer",
+                "description" : "Flag ID"
+              },
+              "reason" : {
+                "type" : "string",
+                "description" : "Flag reason",
+                "maxLength" : 150
+              }
+            },
+            "required" : [ "id", "reason" ]
+          }
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the post was created"
+        },
+        "updatedAt" : {
+          "type" : "string",
+          "format" : "date-time",
+          "description" : "When the post was last updated"
+        }
+      },
+      "title" : "CreatePostResponse"
+    }
+  }
+}

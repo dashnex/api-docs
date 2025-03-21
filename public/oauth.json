@@ -1,0 +1,54 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2025-03-21T11:19:11Z",
+    "title" : "OAuth"
+  },
+  "host" : "api.dashnex.com",
+  "basePath" : "/oauth/v2",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/auth" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/token" : {
+      "post" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Empty" : {
+      "type" : "object",
+      "title" : "Empty Schema"
+    }
+  }
+}

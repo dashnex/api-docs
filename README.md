@@ -25,11 +25,25 @@ This project deploys a Swagger UI interface using Cloudflare Workers, serving yo
 
 To run the project locally:
 
-```bash
-npm run dev
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dashnex/api-docs
+   cd api-docs
+   ```
 
-This will start a local development server, typically at `http://localhost:8787`.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the local development server:
+   ```bash
+   npm run dev
+   ```
+
+The development server will start at `http://localhost:8787` by default. Any changes you make to the code will automatically trigger a reload of the development server.
+
+Note: If port 8787 is already in use, Wrangler will automatically select the next available port.
 
 ## Deployment
 
@@ -48,4 +62,4 @@ npm run deploy
 
 ## Customization
 
-To update the Swagger documentation, replace the `public/swagger.json` file with your own OpenAPI/Swagger specification. 
+To update the Swagger documentation, add the `public/*.json` file with your own OpenAPI/Swagger specification and update `public/index.html`.  

@@ -1,4 +1,4 @@
-# Swagger UI on Cloudflare Workers
+# Swagger UI on Cloudflare Workers for DashNex.com API
 
 This project deploys a Swagger UI interface using Cloudflare Workers, serving your OpenAPI/Swagger documentation with a modern, responsive UI.
 

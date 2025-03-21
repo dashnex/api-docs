@@ -5,7 +5,7 @@ This project deploys a Swagger UI interface using Cloudflare Workers, serving yo
 ## Prerequisites
 
 - Node.js (v16 or later)
-- npm or yarn
+- npm or yarn or bun
 - Cloudflare account
 - Wrangler CLI (installed via npm)
 

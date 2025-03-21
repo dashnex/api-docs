@@ -41,7 +41,7 @@ To run the project locally:
    npm run dev
    ```
 
-The development server will start at `http://localhost:8787` by default. Any changes you make to the code will automatically trigger a reload of the development server.
+The development server will start at `http://localhost:8787/docs` by default. Any changes you make to the code will automatically trigger a reload of the development server.
 
 Note: If port 8787 is already in use, Wrangler will automatically select the next available port.
 

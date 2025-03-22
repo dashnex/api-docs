@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "2025-03-21T11:19:11Z",
+    "version" : "2025-03-22T15:14:36Z",
     "title" : "OAuth"
   },
   "host" : "api.dashnex.com",
@@ -10,7 +10,48 @@
   "paths" : {
     "/auth" : {
       "get" : {
-        "produces" : [ "application/json" ],
+        "produces" : [ "text/html", "application/json" ],
+        "parameters" : [ {
+          "name" : "state",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "client_id",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "code_challenge_method",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "response_type",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "scope",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "redirect_uri",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "ref",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "code_challenge",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
         "responses" : {
           "200" : {
             "description" : "200 response",
@@ -28,7 +69,21 @@
     },
     "/token" : {
       "post" : {
+        "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "OauthToken",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/OauthToken"
+          }
+        } ],
         "responses" : {
           "200" : {
             "description" : "200 response",
@@ -49,6 +104,26 @@
     "Empty" : {
       "type" : "object",
       "title" : "Empty Schema"
+    },
+    "OauthToken" : {
+      "type" : "object",
+      "required" : [ "code", "grant_type", "redirect_uri" ],
+      "properties" : {
+        "grant_type" : {
+          "type" : "string",
+          "description" : "The OAuth grant type. Must be \"authorization_code\"",
+          "enum" : [ "authorization_code" ]
+        },
+        "code" : {
+          "type" : "string",
+          "description" : "The authorization code received from DashNex"
+        },
+        "redirect_uri" : {
+          "type" : "string",
+          "format" : "uri",
+          "description" : "The redirect URI used in the authorization request"
+        }
+      }
     }
   }
 }

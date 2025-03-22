@@ -1,14 +1,14 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "2025-03-20T12:36:03Z",
+    "version" : "2025-03-22T15:41:35Z",
     "title" : "Users"
   },
   "host" : "api.dashnex.com",
   "basePath" : "/users/v1",
   "schemes" : [ "https" ],
   "paths" : {
-    "/" : {
+    "/oauth" : {
       "get" : {
         "produces" : [ "application/json" ],
         "parameters" : [ {

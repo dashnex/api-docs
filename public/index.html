@@ -18,26 +18,27 @@
 <script src="https://unpkg.com/swagger-ui-dist@5.20.1/swagger-ui-bundle.js" crossorigin></script>
 <script>
   window.onload = () => {
+    const hash = Math.random().toString(36).substring(2, 15);
     window.ui = SwaggerUIBundle({
       urls: [
         {
-          url: './docs/auth.json',
+          url: `./docs/auth.json?v=${hash}`,
           name: 'Auth',
         },
         {
-          url: './docs/communities.json',
+          url: `./docs/communities.json?v=${hash}`,
           name: 'Communities',
         },
         {
-          url: './docs/oauth.json',
+          url: `./docs/oauth.json?v=${hash}`,
           name: 'OAuth',
         },
         {
-          url: './docs/products.json',
+          url: `./docs/products.json?v=${hash}`,
           name: 'Products',
         },
         {
-          url: './docs/users.json',
+          url: `./docs/users.json?v=${hash}`,
           name: 'Users',
         },
       ],

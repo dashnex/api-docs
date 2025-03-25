@@ -1,7 +1,7 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "version" : "2025-03-25T07:27:29Z",
+    "version" : "2025-03-25T08:59:22Z",
     "title" : "Products"
   },
   "host" : "api.dashnex.com",
@@ -30,6 +30,38 @@
             },
             "headers" : {
               "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "productCode",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
                 "type" : "string"
               }
             }
@@ -64,6 +96,35 @@
             }
           }
         }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "productCode",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
       }
     },
     "/oauth/activations/{productCode}/revoke" : {
@@ -88,6 +149,38 @@
             },
             "headers" : {
               "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "productCode",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
                 "type" : "string"
               }
             }
@@ -118,6 +211,38 @@
             "headers" : {
               "x-dashnex-rid" : {
                 "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "productCode",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
               }
             }
           }
@@ -132,7 +257,32 @@
           "in" : "header",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "codes",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
         } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GetInternalOfferResponse"
+            },
+            "headers" : {
+              "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
             "description" : "200 response",
@@ -140,7 +290,13 @@
               "$ref" : "#/definitions/Empty"
             },
             "headers" : {
-              "x-dashnex-rid" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
                 "type" : "string"
               }
             }
@@ -166,10 +322,42 @@
           "200" : {
             "description" : "200 response",
             "schema" : {
-              "$ref" : "#/definitions/Empty"
+              "$ref" : "#/definitions/GetOfferOrderStatusResponse"
             },
             "headers" : {
               "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "offerOrder",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
                 "type" : "string"
               }
             }
@@ -200,10 +388,47 @@
           "200" : {
             "description" : "200 response",
             "schema" : {
-              "$ref" : "#/definitions/Empty"
+              "$ref" : "#/definitions/PostBuyInternalOfferResponse"
             },
             "headers" : {
               "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "offer",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "amount",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
                 "type" : "string"
               }
             }
@@ -229,10 +454,42 @@
           "200" : {
             "description" : "200 response",
             "schema" : {
-              "$ref" : "#/definitions/Empty"
+              "$ref" : "#/definitions/PostBuyInternalOfferResponse"
             },
             "headers" : {
               "x-dashnex-rid" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "offer",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
                 "type" : "string"
               }
             }
@@ -245,6 +502,175 @@
     "Empty" : {
       "type" : "object",
       "title" : "Empty Schema"
+    },
+    "PostBuyInternalOfferResponse" : {
+      "type" : "object",
+      "required" : [ "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "GetOfferOrderStatusResponse" : {
+      "type" : "object",
+      "required" : [ "status", "transactionId" ],
+      "properties" : {
+        "transactionId" : {
+          "type" : "integer",
+          "description" : "The ID of the offer transaction"
+        },
+        "status" : {
+          "type" : "string",
+          "description" : "The status of the transaction",
+          "enum" : [ "new", "wait", "3ds_request", "refunded", "failed", "paid", "refunded_partially" ]
+        },
+        "message" : {
+          "type" : "string",
+          "description" : "Error message when status is failed"
+        },
+        "site" : {
+          "type" : "string",
+          "description" : "Site information for bio creation orders when status is paid"
+        },
+        "invoiceLink" : {
+          "type" : "string",
+          "format" : "uri",
+          "description" : "Absolute URL to the invoice when status is paid"
+        },
+        "invoice" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "type" : "integer",
+              "description" : "Invoice ID"
+            },
+            "status" : {
+              "type" : "string",
+              "description" : "Invoice status",
+              "enum" : [ "paid", "refunded", "not_paid" ]
+            },
+            "customerId" : {
+              "type" : "string",
+              "description" : "Customer identifier"
+            },
+            "billedBy" : {
+              "type" : "string",
+              "description" : "Billing from information"
+            },
+            "billedTo" : {
+              "type" : "string",
+              "description" : "Billing to information"
+            },
+            "total" : {
+              "type" : "number",
+              "description" : "Total amount with 3 decimal places"
+            },
+            "createdAt" : {
+              "type" : "string",
+              "format" : "date-time",
+              "description" : "Invoice creation timestamp"
+            },
+            "updatedAt" : {
+              "type" : "string",
+              "format" : "date-time",
+              "description" : "Invoice last update timestamp"
+            }
+          },
+          "required" : [ "billedBy", "billedTo", "createdAt", "customerId", "id", "status", "total", "updatedAt" ]
+        },
+        "invoiceHtml" : {
+          "type" : "string",
+          "description" : "Rendered HTML template of the invoice when status is paid and renderOldHtml is true"
+        }
+      }
+    },
+    "GetInternalOfferResponse" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "code" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "triggerPopupTitle" : {
+            "type" : "string"
+          },
+          "triggerPopupDescription" : {
+            "type" : "string"
+          },
+          "offerPopupTitle" : {
+            "type" : "string"
+          },
+          "offerPopupDescription" : {
+            "type" : "string"
+          },
+          "confirmationMessage" : {
+            "type" : "string"
+          },
+          "paymentType" : {
+            "type" : "string"
+          },
+          "creditOptions" : {
+            "type" : "array"
+          },
+          "paymentTypePayload" : {
+            "type" : "object",
+            "properties" : {
+              "price" : {
+                "type" : "number"
+              },
+              "priceScales" : {
+                "type" : "array"
+              },
+              "regularPrice" : {
+                "type" : "number"
+              },
+              "ratingMaxDiscount" : {
+                "type" : "number"
+              }
+            },
+            "required" : [ "price", "priceScales", "ratingMaxDiscount", "regularPrice" ]
+          },
+          "offerType" : {
+            "type" : "string"
+          },
+          "bumps" : {
+            "type" : "array"
+          },
+          "paymentProcessor" : {
+            "type" : "object",
+            "properties" : {
+              "id" : {
+                "type" : "integer"
+              },
+              "type" : {
+                "type" : "string"
+              },
+              "name" : {
+                "type" : "string"
+              }
+            },
+            "required" : [ "id", "name", "type" ]
+          },
+          "alreadyHas" : {
+            "type" : "boolean"
+          },
+          "personalPrice" : {
+            "type" : "number"
+          }
+        },
+        "required" : [ "alreadyHas", "bumps", "code", "confirmationMessage", "creditOptions", "id", "name", "offerPopupDescription", "offerPopupTitle", "offerType", "paymentProcessor", "paymentType", "paymentTypePayload", "personalPrice", "title", "triggerPopupDescription", "triggerPopupTitle" ]
+      }
     }
   }
 }

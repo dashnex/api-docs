@@ -1,127 +1,222 @@
 {
-  "swagger" : "2.0",
-  "info" : {
-    "version" : "2025-03-22T15:14:36Z",
-    "title" : "OAuth"
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OAuth",
+    "version": "2025-03-25T07:57:55Z"
   },
-  "host" : "api.dashnex.com",
-  "basePath" : "/oauth/v2",
-  "schemes" : [ "https" ],
-  "paths" : {
-    "/auth" : {
-      "get" : {
-        "produces" : [ "text/html", "application/json" ],
-        "parameters" : [ {
-          "name" : "state",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "client_id",
-          "in" : "query",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "code_challenge_method",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "response_type",
-          "in" : "query",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "scope",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "redirect_uri",
-          "in" : "query",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "ref",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "code_challenge",
-          "in" : "query",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+  "servers": [
+    {
+      "url": "https://api.dashnex.com/oauth/v2",
+      "description": "Production server"
+    },
+    {
+      "url": "https://api.qa.dashnex.com/oauth/v2",
+      "description": "QA server"
+    }
+  ],
+  "paths": {
+    "/auth": {
+      "get": {
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "redirect_uri",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "response_type",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code_challenge",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code_challenge_method",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ref",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "scope",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+            "content": {
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       }
     },
-    "/token" : {
-      "post" : {
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "authorization",
-          "in" : "header",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "in" : "body",
-          "name" : "OauthToken",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/definitions/OauthToken"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+    "/token": {
+      "options": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OauthToken"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "public"
+        ]
       }
     }
   },
-  "definitions" : {
-    "Empty" : {
-      "type" : "object",
-      "title" : "Empty Schema"
-    },
-    "OauthToken" : {
-      "type" : "object",
-      "required" : [ "code", "grant_type", "redirect_uri" ],
-      "properties" : {
-        "grant_type" : {
-          "type" : "string",
-          "description" : "The OAuth grant type. Must be \"authorization_code\"",
-          "enum" : [ "authorization_code" ]
-        },
-        "code" : {
-          "type" : "string",
-          "description" : "The authorization code received from DashNex"
-        },
-        "redirect_uri" : {
-          "type" : "string",
-          "format" : "uri",
-          "description" : "The redirect URI used in the authorization request"
+  "components": {
+    "schemas": {
+      "Empty": {
+        "title": "Empty Schema",
+        "type": "object"
+      },
+      "OauthToken": {
+        "required": [
+          "code",
+          "grant_type",
+          "redirect_uri"
+        ],
+        "type": "object",
+        "properties": {
+          "grant_type": {
+            "type": "string",
+            "description": "The OAuth grant type. Must be \"authorization_code\"",
+            "enum": [
+              "authorization_code"
+            ]
+          },
+          "code": {
+            "type": "string",
+            "description": "The authorization code received from DashNex"
+          },
+          "redirect_uri": {
+            "type": "string",
+            "description": "The redirect URI used in the authorization request",
+            "format": "uri"
+          }
         }
       }
     }

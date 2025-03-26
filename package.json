@@ -4,8 +4,9 @@
   "description": "Swagger UI hosted on Cloudflare Workers",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "pre-process": "node pre-process.js",
+    "dev": "npm run pre-process && wrangler dev",
+    "deploy": "npm run pre-process && wrangler deploy"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240208.0",

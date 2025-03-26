@@ -1,675 +1,1063 @@
 {
-  "swagger" : "2.0",
-  "info" : {
-    "version" : "2025-03-25T08:59:22Z",
-    "title" : "Products"
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Products",
+    "version": "2025-03-26T13:11:47Z"
   },
-  "host" : "api.dashnex.com",
-  "basePath" : "/products/v1",
-  "schemes" : [ "https" ],
-  "paths" : {
-    "/oauth/activations/{productCode}/activate" : {
-      "post" : {
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "productCode",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
-            },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+  "servers": [
+    {
+      "url": "https://api.dashnex.com/products/v1",
+      "description": "Production server"
+    },
+    {
+      "url": "https://api.qa.dashnex.com/products/v1",
+      "description": "QA server"
+    }
+  ],
+  "paths": {
+    "/oauth/activations/{productCode}/activate": {
+      "options": {
+        "parameters": [
+          {
+            "name": "productCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
               },
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       },
-      "options" : {
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "productCode",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+      "post": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "productCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Methods" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Headers" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       }
     },
-    "/oauth/activations/{productCode}/domain/revoke" : {
-      "delete" : {
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "productCode",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+    "/oauth/activations/{productCode}/domain/revoke": {
+      "delete": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "productCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       },
-      "options" : {
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "productCode",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+      "options": {
+        "parameters": [
+          {
+            "name": "productCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Methods" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Headers" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       }
     },
-    "/oauth/activations/{productCode}/revoke" : {
-      "delete" : {
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "productCode",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
-            },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+    "/oauth/activations/{productCode}/revoke": {
+      "delete": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "productCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
               },
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       },
-      "options" : {
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "productCode",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+      "options": {
+        "parameters": [
+          {
+            "name": "productCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Methods" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Headers" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       }
     },
-    "/oauth/activations/{productCode}/status" : {
-      "get" : {
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "productCode",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
-            },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+    "/oauth/activations/{productCode}/status": {
+      "get": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "productCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
               },
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       },
-      "options" : {
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "productCode",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+      "options": {
+        "parameters": [
+          {
+            "name": "productCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Methods" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Headers" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       }
     },
-    "/oauth/offers/internal" : {
-      "get" : {
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "codes",
-          "in" : "query",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/GetInternalOfferResponse"
-            },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+    "/oauth/offers/{offer}/credit/buy/{amount}": {
+      "options": {
+        "parameters": [
+          {
+            "name": "amount",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offer",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
               },
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       },
-      "options" : {
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+      "post": {
+        "parameters": [
+          {
+            "name": "amount",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offer",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Methods" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Headers" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostBuyInternalOfferResponse"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       }
     },
-    "/oauth/offers/orders/{offerOrder}/status" : {
-      "get" : {
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "offerOrder",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/GetOfferOrderStatusResponse"
-            },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+    "/oauth/offers/{offer}/internal/buy": {
+      "options": {
+        "parameters": [
+          {
+            "name": "offer",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
               },
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       },
-      "options" : {
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "offerOrder",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+      "post": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offer",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Methods" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Headers" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostBuyInternalOfferResponse"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       }
     },
-    "/oauth/offers/{offer}/credit/buy/{amount}" : {
-      "post" : {
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "offer",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "amount",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/PostBuyInternalOfferResponse"
-            },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+    "/oauth/offers/internal": {
+      "get": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codes",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
               },
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetInternalOfferResponse"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       },
-      "options" : {
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "offer",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "amount",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+      "options": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Methods" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Headers" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       }
     },
-    "/oauth/offers/{offer}/internal/buy" : {
-      "post" : {
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string"
-        }, {
-          "name" : "offer",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/PostBuyInternalOfferResponse"
-            },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+    "/oauth/offers/orders/{offerOrder}/status": {
+      "get": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offerOrder",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
               },
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetOfferOrderStatusResponse"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       },
-      "options" : {
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "offer",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+      "options": {
+        "parameters": [
+          {
+            "name": "offerOrder",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "Access-Control-Allow-Origin" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Methods" : {
-                "type" : "string"
-              },
-              "Access-Control-Allow-Headers" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       }
     }
   },
-  "definitions" : {
-    "Empty" : {
-      "type" : "object",
-      "title" : "Empty Schema"
-    },
-    "PostBuyInternalOfferResponse" : {
-      "type" : "object",
-      "required" : [ "id" ],
-      "properties" : {
-        "id" : {
-          "type" : "integer"
+  "components": {
+    "schemas": {
+      "Empty": {
+        "title": "Empty Schema",
+        "type": "object"
+      },
+      "PostBuyInternalOfferResponse": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
         }
-      }
-    },
-    "GetOfferOrderStatusResponse" : {
-      "type" : "object",
-      "required" : [ "status", "transactionId" ],
-      "properties" : {
-        "transactionId" : {
-          "type" : "integer",
-          "description" : "The ID of the offer transaction"
-        },
-        "status" : {
-          "type" : "string",
-          "description" : "The status of the transaction",
-          "enum" : [ "new", "wait", "3ds_request", "refunded", "failed", "paid", "refunded_partially" ]
-        },
-        "message" : {
-          "type" : "string",
-          "description" : "Error message when status is failed"
-        },
-        "site" : {
-          "type" : "string",
-          "description" : "Site information for bio creation orders when status is paid"
-        },
-        "invoiceLink" : {
-          "type" : "string",
-          "format" : "uri",
-          "description" : "Absolute URL to the invoice when status is paid"
-        },
-        "invoice" : {
-          "type" : "object",
-          "properties" : {
-            "id" : {
-              "type" : "integer",
-              "description" : "Invoice ID"
-            },
-            "status" : {
-              "type" : "string",
-              "description" : "Invoice status",
-              "enum" : [ "paid", "refunded", "not_paid" ]
-            },
-            "customerId" : {
-              "type" : "string",
-              "description" : "Customer identifier"
-            },
-            "billedBy" : {
-              "type" : "string",
-              "description" : "Billing from information"
-            },
-            "billedTo" : {
-              "type" : "string",
-              "description" : "Billing to information"
-            },
-            "total" : {
-              "type" : "number",
-              "description" : "Total amount with 3 decimal places"
-            },
-            "createdAt" : {
-              "type" : "string",
-              "format" : "date-time",
-              "description" : "Invoice creation timestamp"
-            },
-            "updatedAt" : {
-              "type" : "string",
-              "format" : "date-time",
-              "description" : "Invoice last update timestamp"
+      },
+      "GetOfferOrderStatusResponse": {
+        "required": [
+          "status",
+          "transactionId"
+        ],
+        "type": "object",
+        "properties": {
+          "transactionId": {
+            "type": "integer",
+            "description": "The ID of the offer transaction"
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the transaction",
+            "enum": [
+              "new",
+              "wait",
+              "3ds_request",
+              "refunded",
+              "failed",
+              "paid",
+              "refunded_partially"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message when status is failed"
+          },
+          "site": {
+            "type": "string",
+            "description": "Site information for bio creation orders when status is paid"
+          },
+          "invoiceLink": {
+            "type": "string",
+            "description": "Absolute URL to the invoice when status is paid",
+            "format": "uri"
+          },
+          "invoice": {
+            "required": [
+              "billedBy",
+              "billedTo",
+              "createdAt",
+              "customerId",
+              "id",
+              "items",
+              "status",
+              "total",
+              "updatedAt"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "description": "Invoice ID"
+              },
+              "status": {
+                "type": "string",
+                "description": "Invoice status",
+                "enum": [
+                  "paid",
+                  "refunded",
+                  "not_paid"
+                ]
+              },
+              "customerId": {
+                "type": "string",
+                "description": "Customer identifier"
+              },
+              "billedBy": {
+                "type": "string",
+                "description": "Billing from information"
+              },
+              "billedTo": {
+                "type": "string",
+                "description": "Billing to information"
+              },
+              "payment": {
+                "type": "object",
+                "description": "Payment information"
+              },
+              "billingStartDate": {
+                "type": "object",
+                "description": "Start date of billing period",
+                "format": "date-time"
+              },
+              "billingEndDate": {
+                "type": "object",
+                "description": "End date of billing period",
+                "format": "date-time"
+              },
+              "billingNextDate": {
+                "type": "object",
+                "description": "Next billing date",
+                "format": "date-time"
+              },
+              "total": {
+                "pattern": "^\\d+\\.\\d{3}$",
+                "type": "string",
+                "description": "Total amount with 3 decimal places"
+              },
+              "createdAt": {
+                "type": "string",
+                "description": "Invoice creation timestamp",
+                "format": "date-time"
+              },
+              "updatedAt": {
+                "type": "string",
+                "description": "Invoice last update timestamp",
+                "format": "date-time"
+              },
+              "offerSubscriptionId": {
+                "type": "object",
+                "description": "Associated offer subscription ID if exists"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "required": [
+                    "discount",
+                    "id",
+                    "name",
+                    "status",
+                    "total"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "description": "Item ID"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Item name"
+                    },
+                    "total": {
+                      "type": "number",
+                      "description": "Item total amount"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Item status"
+                    },
+                    "discount": {
+                      "pattern": "^\\d+\\.\\d{2}$",
+                      "type": "string",
+                      "description": "Discount amount with 2 decimal places"
+                    }
+                  }
+                }
+              }
             }
           },
-          "required" : [ "billedBy", "billedTo", "createdAt", "customerId", "id", "status", "total", "updatedAt" ]
-        },
-        "invoiceHtml" : {
-          "type" : "string",
-          "description" : "Rendered HTML template of the invoice when status is paid and renderOldHtml is true"
-        }
-      }
-    },
-    "GetInternalOfferResponse" : {
-      "type" : "array",
-      "items" : {
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "type" : "integer"
-          },
-          "code" : {
-            "type" : "string"
-          },
-          "name" : {
-            "type" : "string"
-          },
-          "title" : {
-            "type" : "string"
-          },
-          "triggerPopupTitle" : {
-            "type" : "string"
-          },
-          "triggerPopupDescription" : {
-            "type" : "string"
-          },
-          "offerPopupTitle" : {
-            "type" : "string"
-          },
-          "offerPopupDescription" : {
-            "type" : "string"
-          },
-          "confirmationMessage" : {
-            "type" : "string"
-          },
-          "paymentType" : {
-            "type" : "string"
-          },
-          "creditOptions" : {
-            "type" : "array"
-          },
-          "paymentTypePayload" : {
-            "type" : "object",
-            "properties" : {
-              "price" : {
-                "type" : "number"
-              },
-              "priceScales" : {
-                "type" : "array"
-              },
-              "regularPrice" : {
-                "type" : "number"
-              },
-              "ratingMaxDiscount" : {
-                "type" : "number"
-              }
-            },
-            "required" : [ "price", "priceScales", "ratingMaxDiscount", "regularPrice" ]
-          },
-          "offerType" : {
-            "type" : "string"
-          },
-          "bumps" : {
-            "type" : "array"
-          },
-          "paymentProcessor" : {
-            "type" : "object",
-            "properties" : {
-              "id" : {
-                "type" : "integer"
-              },
-              "type" : {
-                "type" : "string"
-              },
-              "name" : {
-                "type" : "string"
-              }
-            },
-            "required" : [ "id", "name", "type" ]
-          },
-          "alreadyHas" : {
-            "type" : "boolean"
-          },
-          "personalPrice" : {
-            "type" : "number"
+          "invoiceHtml": {
+            "type": "string",
+            "description": "Rendered HTML template of the invoice when status is paid and renderOldHtml is true"
           }
-        },
-        "required" : [ "alreadyHas", "bumps", "code", "confirmationMessage", "creditOptions", "id", "name", "offerPopupDescription", "offerPopupTitle", "offerType", "paymentProcessor", "paymentType", "paymentTypePayload", "personalPrice", "title", "triggerPopupDescription", "triggerPopupTitle" ]
+        }
+      },
+      "GetInternalOfferResponse": {
+        "type": "array",
+        "items": {
+          "required": [
+            "alreadyHas",
+            "bumps",
+            "code",
+            "confirmationMessage",
+            "creditOptions",
+            "id",
+            "name",
+            "offerPopupDescription",
+            "offerPopupTitle",
+            "offerType",
+            "paymentProcessor",
+            "paymentType",
+            "paymentTypePayload",
+            "personalPrice",
+            "title",
+            "triggerPopupDescription",
+            "triggerPopupTitle"
+          ],
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "code": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "triggerPopupTitle": {
+              "type": "string"
+            },
+            "triggerPopupDescription": {
+              "type": "string"
+            },
+            "offerPopupTitle": {
+              "type": "string"
+            },
+            "offerPopupDescription": {
+              "type": "string"
+            },
+            "confirmationMessage": {
+              "type": "string"
+            },
+            "paymentType": {
+              "type": "string"
+            },
+            "creditOptions": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "paymentTypePayload": {
+              "required": [
+                "price",
+                "priceScales",
+                "ratingMaxDiscount",
+                "regularPrice"
+              ],
+              "type": "object",
+              "properties": {
+                "price": {
+                  "type": "number"
+                },
+                "priceScales": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                },
+                "regularPrice": {
+                  "type": "number"
+                },
+                "ratingMaxDiscount": {
+                  "type": "number"
+                }
+              }
+            },
+            "offerType": {
+              "type": "string"
+            },
+            "bumps": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "paymentProcessor": {
+              "required": [
+                "id",
+                "name",
+                "type"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "alreadyHas": {
+              "type": "boolean"
+            },
+            "personalPrice": {
+              "type": "number"
+            }
+          }
+        }
       }
     }
   }

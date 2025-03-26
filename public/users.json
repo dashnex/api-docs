@@ -1,42 +1,63 @@
 {
-  "swagger" : "2.0",
-  "info" : {
-    "version" : "2025-03-22T15:41:35Z",
-    "title" : "Users"
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Users",
+    "version": "2025-03-22T15:41:35Z"
   },
-  "host" : "api.dashnex.com",
-  "basePath" : "/users/v1",
-  "schemes" : [ "https" ],
-  "paths" : {
-    "/oauth" : {
-      "get" : {
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "authorization",
-          "in" : "header",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "schema" : {
-              "$ref" : "#/definitions/Empty"
+  "servers": [
+    {
+      "url": "https://api.dashnex.com/users/v1",
+      "description": "Production server"
+    },
+    {
+      "url": "https://api.qa.dashnex.com/users/v1",
+      "description": "QA server"
+    }
+  ],
+  "paths": {
+    "/oauth": {
+      "get": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "x-dashnex-rid": {
+                "schema": {
+                  "type": "string"
+                }
+              }
             },
-            "headers" : {
-              "x-dashnex-rid" : {
-                "type" : "string"
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Empty"
+                }
               }
             }
           }
-        }
+        },
+        "tags": [
+          "public"
+        ]
       }
     }
   },
-  "definitions" : {
-    "Empty" : {
-      "type" : "object",
-      "title" : "Empty Schema"
+  "components": {
+    "schemas": {
+      "Empty": {
+        "title": "Empty Schema",
+        "type": "object"
+      }
     }
   }
 }
